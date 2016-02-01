@@ -1,0 +1,53 @@
+---
+- name: Ensure zsh is installed
+  homebrew:
+    name: zsh
+    state: present
+
+- name: Check where zsh is installed
+  shell: which zsh
+  register: zsh_installation
+
+- name: Remove the old zsh from /etc/shells
+  become: yes
+  lineinfile:
+    dest: /etc/shells
+    line: "/bin/zsh"
+    state: absent
+
+- name: Ensure homebrew zsh is in /etc/shells
+  become: yes
+  lineinfile:
+    dest: /etc/shells
+    line: "{{ zsh_installation.stdout }}"
+    state: present
+
+- name: Ensure zsh is the default shell
+  shell: "chsh -s {{ zsh_installation.stdout }}"
+  when: ansible_env.SHELL != zsh_installation.stdout
+
+- name: Create temp dir
+  file:
+    path: ~/.tmp
+    state: directory
+
+- name: Download oh-my-zsh install script
+  get_url:
+    url: https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+    dest: ~/.tmp/zsh_install.sh
+    mode: 0777
+
+- name: Check if oh-my-zsh is installed
+  stat:
+    path: ~/.oh-my-zsh
+  register: oh_my_zsh_installation
+
+- name: Install oh-my-zsh
+  script: ~/.tmp/zsh_install.sh
+  when: not oh_my_zsh_installation.stat.exists
+
+- name: Set .zshrc
+  template:
+    src: zshrc.j2
+    dest: ~/.zshrc
+    mode: 0644

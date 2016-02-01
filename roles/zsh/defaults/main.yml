@@ -1,0 +1,14 @@
+---
+zsh_default_theme: robbyrussell
+zsh_case_sensitive_completion: false
+zsh_hyphen_insensitive_completion: false
+zsh_disable_auto_update: true
+zsh_update_zsh_days: 13
+zsh_disable_ls_colors: true
+zsh_disable_auto_title: true
+zsh_enable_correction: true
+zsh_completion_waiting_dots: true
+zsh_disable_untracked_files_dirty: true
+zsh_hist_stamps: "mm/dd/yyyy"
+zsh_custom: "$ZSH/custom"
+zsh_plugins: "git"

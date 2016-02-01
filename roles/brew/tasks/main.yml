@@ -1,0 +1,13 @@
+---
+- name: Check if homebrew is installed
+  shell: brew doctor
+  register: homebrew_check
+  ignore_errors: yes
+
+- name: Install homebrew
+  shell: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  when: homebrew_check|failed
+
+- name: Update homebrew
+  homebrew:
+    update_homebrew: yes
