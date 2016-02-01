@@ -1,0 +1,6 @@
+---
+- hosts: local
+  become: true
+  tasks:
+    - name: Test
+      debug: var=ansible_distribution
