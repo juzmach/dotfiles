@@ -4,3 +4,10 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ system_packages }}"
+
+- name: Install casks
+  homebrew:
+    name: "Caskroom/cask/{{ item }}"
+    state: present
+  with_items: "{{ casks }}"
+  ignore_errors: yes

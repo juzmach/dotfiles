@@ -3,3 +3,6 @@ system_packages:
   - git
   - curl
   - wget
+
+casks:
+  - iterm2
