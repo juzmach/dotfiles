@@ -1,0 +1,14 @@
+---
+- name: Install tmux and dependencies
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - reattach-to-user-namespace
+    - tmux
+
+- name: Install .tmux.conf
+  template:
+    src: tmux.conf.j2
+    dest: ~/.tmux.conf
+    mode: 0644
