@@ -1,0 +1,4 @@
+---
+vim_plugins:
+  - name: nerdtree
+    repo: "https://github.com/scrooloose/nerdtree"

@@ -1,0 +1,14 @@
+---
+vim_plugins:
+  - name: nerdtree
+    repo: "https://github.com/scrooloose/nerdtree"
+  - name: vim-yaml
+    repo: "https://github.com/stephpy/vim-yaml"
+  - name: vim-fugitive
+    repo: "https://github.com/tpope/vim-fugitive"
+  - name: vim-airline
+    repo: "https://github.com/bling/vim-airline"
+  - name: vim-tmux-navigator
+    repo: "https://github.com/christoomey/vim-tmux-navigator"
+  - name: vim-colors-solarized
+    repo: "https://github.com/altercation/vim-colors-solarized.git"
