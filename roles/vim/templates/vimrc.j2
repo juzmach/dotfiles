@@ -144,20 +144,25 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
-try
-    colorscheme solarized
-catch
-endtry
-
 set background=dark
+
+" Solarized options
+try
+    let g:solarized_visibility = "high"
+    let g:solarized_contrast = "high"
+    colorscheme solarized
+    catch
+endtry
 
 " Set extra options when running in GUI mode
 if has("gui_running")
     set guioptions-=T
     set guioptions-=e
-    set t_Co=256
     set guitablabel=%M\ %t
 endif
+
+" Set colors to 256
+set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8

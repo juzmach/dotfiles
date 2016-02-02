@@ -1,5 +1,5 @@
 ---
-zsh_default_theme: robbyrussell
+zsh_theme: robbyrussell
 zsh_case_sensitive_completion: false
 zsh_hyphen_insensitive_completion: false
 zsh_disable_auto_update: true
