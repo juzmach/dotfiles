@@ -12,3 +12,5 @@ zsh_disable_untracked_files_dirty: true
 zsh_hist_stamps: "mm/dd/yyyy"
 zsh_custom: "$ZSH/custom"
 zsh_plugins: "git"
+zsh_lc_all: "en_US.UTF-8"
+zsh_lang: "en_US.UTF-8"

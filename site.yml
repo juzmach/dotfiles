@@ -2,7 +2,8 @@
 - hosts: all
   roles:
     - brew
-    - common
     - zsh
     - vim
     - tmux
+    - ruby
+    - vagrant

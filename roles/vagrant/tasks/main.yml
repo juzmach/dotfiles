@@ -1,0 +1,16 @@
+---
+- name: Check installed casks
+  shell: brew cask list
+  register: installed_casks
+
+- name: Print installed casks
+  debug: var=installed_casks.stdout
+
+- name: Install Virtualbox and Vagrant
+  homebrew:
+    name: "Caskroom/cask/{{ item }}"
+    state: present
+  when: not item in installed_casks.stdout
+  with_items:
+    - virtualbox
+    - vagrant

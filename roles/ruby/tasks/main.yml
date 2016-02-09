@@ -1,0 +1,30 @@
+---
+- name: Install rbenv and ruby-build
+  homebrew:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - rbenv
+    - ruby-build
+
+- name: Add rbenv to path
+  lineinfile:
+    line: 'export PATH="$HOME/.rbenv/bin:$PATH"'
+    dest: ~/.zshrc
+    state: present
+
+- name: Initialize rbenv in zshrc
+  lineinfile:
+    line: 'eval "$(rbenv init -)"'
+    dest: ~/.zshrc
+    state: present
+
+- name: Install default ruby version
+  shell: "rbenv rehash && rbenv install {{ default_ruby }}"
+  ignore_errors: yes
+
+- name: Set default ruby version as global
+  shell: "rbenv global {{ default_ruby }}"
+
+- name: Install bundler
+  shell: "gem install bundler"

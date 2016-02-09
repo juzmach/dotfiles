@@ -1,8 +1,8 @@
 ---
-system_packages:
+brew_packages:
   - git
   - curl
   - wget
 
-casks:
+brew_casks:
   - iterm2

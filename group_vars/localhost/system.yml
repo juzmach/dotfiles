@@ -1,9 +1,12 @@
-system_packages:
+brew_packages:
   - git
   - curl
   - wget
+  - mosh
 
-casks:
+brew_casks:
   - google-chrome
   - spotify
   - iterm2
+  - fitbit-connect
+  - screenhero
