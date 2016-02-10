@@ -12,3 +12,20 @@
     src: tmux.conf.j2
     dest: ~/.tmux.conf
     mode: 0644
+
+- name: Install tmuxinator
+  gem:
+    name: tmuxinator
+    state: present
+
+- name: Upgrade tmuxinator
+  gem:
+    name: tmuxinator
+    state: latest
+  tags:
+    - upgrade
+
+- name: Install tmuxinator-completion
+  homebrew:
+    name: homebrew/completions/tmuxinator-completion
+    state: present
