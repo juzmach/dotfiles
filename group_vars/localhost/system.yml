@@ -1,9 +1,11 @@
+shell_rc_path: ~/.zshrc
+default_editor: vim
 brew_packages:
   - git
   - curl
   - wget
   - mosh
-
+  - htop
 brew_casks:
   - google-chrome
   - spotify
