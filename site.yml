@@ -3,7 +3,7 @@
   roles:
     - brew
     - zsh
-    - vim
-    - tmux
     - ruby
+    - tmux
+    - vim
     - vagrant
