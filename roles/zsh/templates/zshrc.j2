@@ -64,12 +64,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG={{ zsh_lang }}
 export LC_ALL={{ zsh_lc_all }}
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR={{ default_editor }}
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"

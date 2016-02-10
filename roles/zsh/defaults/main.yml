@@ -14,3 +14,4 @@ zsh_custom: "$ZSH/custom"
 zsh_plugins: "git"
 zsh_lc_all: "en_US.UTF-8"
 zsh_lang: "en_US.UTF-8"
+default_editor: vim
