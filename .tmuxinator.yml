@@ -1,0 +1,12 @@
+# ~/.tmuxinator/dotfiles.yml
+
+name: dotfiles
+root: ~/Programming/Personal/dotfiles/
+
+windows:
+  - main:
+      layout: c405,204x51,0,0{102x51,0,0,13,101x51,103,0[101x25,103,0,15,101x25,103,26,16]}
+      panes:
+        - vim .
+        - #empty
+        - #empty
