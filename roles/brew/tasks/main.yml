@@ -33,3 +33,10 @@
     state: present
   when: not item in brew_installed_casks.stdout
   with_items: " {{ brew_casks }}"
+
+- name: Upgrade homebrew
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+  tags:
+    - upgrade
