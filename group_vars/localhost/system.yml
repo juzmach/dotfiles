@@ -10,3 +10,4 @@ brew_casks:
   - iterm2
   - fitbit-connect
   - screenhero
+  - java
