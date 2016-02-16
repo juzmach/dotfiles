@@ -6,6 +6,7 @@ brew_packages:
   - wget
   - mosh
   - htop
+  - gpg
 brew_casks:
   - google-chrome
   - spotify
@@ -13,3 +14,4 @@ brew_casks:
   - fitbit-connect
   - screenhero
   - java
+  - spectacle
