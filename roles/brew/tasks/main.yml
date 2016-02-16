@@ -28,9 +28,7 @@
   with_items: "{{ brew_packages }}"
 
 - name: Install casks
-  homebrew:
-    name: "Caskroom/cask/{{ item }}"
-    state: present
+  shell: "brew cask install {{ item }}"
   when: not item in brew_installed_casks.stdout
   with_items: " {{ brew_casks }}"
 
