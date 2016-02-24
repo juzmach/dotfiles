@@ -15,3 +15,6 @@ brew_casks:
   - screenhero
   - java
   - spectacle
+  - dockertoolbox
+  - steam
+  - skype
