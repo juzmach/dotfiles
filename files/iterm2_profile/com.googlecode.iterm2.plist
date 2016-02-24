@@ -307,6 +307,14 @@
 	<false/>
 	<key>NSWindow Frame Preferences</key>
 	<string>262 258 924 485 0 0 1440 877 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>603 238 585 451 0 0 2560 1440 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>80 209 585 451 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>89 23 585 451 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>144 16 570 451 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1760,6 +1768,12 @@
 			<string>/Users/juusostr</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>477669254.98082602</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>477669243.33207399</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1768,6 +1782,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -1822,7 +1838,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-02-02T13:15:50Z</date>
+	<date>2016-02-20T13:53:32Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
