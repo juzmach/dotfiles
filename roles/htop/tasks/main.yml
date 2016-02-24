@@ -1,0 +1,19 @@
+---
+- name: Install htop
+  homebrew:
+    name: htop
+    state: present
+
+- name: Upgrade htop
+  homebrew:
+    name: htop
+    state: latest
+  tags:
+    - upgrade
+
+- name: Ensure htop is run as root without password
+  lineinfile:
+    dest: /etc/sudoers
+    line: '%admin ALL=(ALL) NOPASSWD: /usr/local/bin/htop'
+    state: present
+  become: yes
