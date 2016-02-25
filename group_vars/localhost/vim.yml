@@ -12,3 +12,5 @@ vim_plugins:
     repo: "https://github.com/christoomey/vim-tmux-navigator"
   - name: vim-colors-solarized
     repo: "https://github.com/altercation/vim-colors-solarized.git"
+  - name: vim-ruby
+    repo: "https://github.com/vim-ruby/vim-ruby.git"
