@@ -34,3 +34,8 @@
   lineinfile:
     dest: "{{ shell_rc_path }}"
     line: export EDITOR=vim
+
+- name: Copy global tmuxinator projects to ~/.tmuxinator/
+  synchronize:
+    src: files/tmuxinator
+    dest: ~/.tmuxinator

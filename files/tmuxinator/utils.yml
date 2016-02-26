@@ -1,0 +1,13 @@
+# ~/.tmuxinator/utils.yml
+
+name: utils
+root: ~/
+
+windows:
+  - monitoring:
+      layout: tiled
+      panes:
+        - #empty
+        - sudo htop
+        - #empty
+        - mosh viestinta
