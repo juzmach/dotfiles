@@ -6,6 +6,7 @@ brew_packages:
   - wget
   - mosh
   - gpg
+  - tig
 brew_casks:
   - google-chrome
   - spotify
@@ -17,3 +18,4 @@ brew_casks:
   - dockertoolbox
   - steam
   - skype
+  - sourcetree
