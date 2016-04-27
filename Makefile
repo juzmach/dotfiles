@@ -1,14 +1,24 @@
+# Check OS
+
+UNAME := $(shell uname -s)
+ifeq ($(UNAME),Darwin)
+	PLAYBOOK := ./playbooks/osx.yml
+else
+	PLAYBOOK := ./playbooks/linux.yml
+endif
+
+
 init:
 	./bootstrap.sh && source ~/.aliases
 
 check:
-	ansible-playbook -i  hosts site.yml --check --diff -c local --ask-sudo-pass
+	ansible-playbook $(PLAYBOOK) --check --diff -c local --ask-sudo-pass
 
 install:
-	ansible-playbook -i hosts site.yml -c local --ask-sudo-pass --skip-tags "upgrade"
+	ansible-playbook $(PLAYBOOK) -c local --ask-sudo-pass --skip-tags "upgrade"
 
 upgrade:
-	ansible-playbook -i hosts site.yml -c local --ask-sudo-pass --tags "upgrade"
+	ansible-playbook $(PLAYBOOK) -c local --ask-sudo-pass --tags "upgrade"
 
 facts:
-	ansible all -i hosts -m setup -c local --ask-sudo-pass
+	ansible all -m setup -c local --ask-sudo-pass
