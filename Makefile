@@ -1,5 +1,5 @@
 init:
-	./bootstrap.sh
+	./bootstrap.sh && source ~/.aliases
 
 check:
 	ansible-playbook -i  hosts site.yml --check --diff -c local --ask-sudo-pass
