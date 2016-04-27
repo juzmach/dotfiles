@@ -3,6 +3,13 @@
   homebrew:
     name: zsh
     state: present
+  when: ansible_distribution == "MacOSX"
+
+- name: Ensure zsh is installed
+  apt:
+    name: zsh
+    state: present
+  when: ansible_distribution == "Ubuntu"
 
 - name: Check where zsh is installed
   shell: which zsh
@@ -14,6 +21,7 @@
     dest: /etc/shells
     line: "/bin/zsh"
     state: absent
+  when: ansible_distribution == "MacOSX"
 
 - name: Ensure homebrew zsh is in /etc/shells
   become: yes
@@ -21,6 +29,7 @@
     dest: /etc/shells
     line: "{{ zsh_installation.stdout }}"
     state: present
+  when: ansible_distribution == "MacOSX"
 
 - name: Ensure zsh is the default shell
   shell: "chsh -s {{ zsh_installation.stdout }}"
