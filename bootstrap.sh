@@ -20,16 +20,20 @@ if [ "$(uname)" == "Darwin" ]; then
             echo "Everything's in order! Moving on."
         fi
     fi
+elif [ "$(uname)" == "Linux" ]; then
+    echo "Running Linux!"
+    echo "Installing Python setuptools"
+    sudo apt-get -y install python-setuptools 
 fi
 
-which -s pip
+which pip
 if [[ $? != 0 ]]; then
     echo "Installing pip"
     sudo easy_install pip
 fi
 
 echo "Installing Ansible's dependencies"
-pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
+sudo pip install --upgrade paramiko PyYAML Jinja2 httplib2 six
 
 echo "Installing Ansible"
 
@@ -38,7 +42,7 @@ ansible_location="$HOME/.ansible_runtime"
 if [ -d $ansible_location ]; then
     echo "Ansible already installed"
 else
-    which -s git
+    which git
     if [[ $? != 0 ]]; then
         echo "git not installed. Installing it first."
         brew install git
