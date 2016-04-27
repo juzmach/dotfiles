@@ -9,7 +9,7 @@ endif
 
 
 init:
-	./bootstrap.sh && source ~/.aliases
+	./bootstrap.sh
 
 check:
 	ansible-playbook $(PLAYBOOK) --check --diff -c local --ask-sudo-pass
