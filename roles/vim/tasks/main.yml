@@ -1,5 +1,5 @@
 ---
-- name: Install vim
+- name: OSX - Install vim
   homebrew:
     name: "{{ item }}"
     state: present
@@ -7,12 +7,17 @@
     - vim
     - macvim
 
-- name: Install vimrc
+- name: Linux (apt) - Install vim
+  apt:
+    name: vim
+    state: present
+
+- name: Main - Install vimrc
   template:
     src: vimrc.j2
     dest: ~/.vimrc
 
-- name: Create necessary folders for pathogen.vim
+- name: Main - Create necessary folders for pathogen.vim
   file:
     path: "{{ item }}"
     state: directory
@@ -20,12 +25,12 @@
     - ~/.vim/autoload
     - ~/.vim/bundle
 
-- name: Install pathogen.vim
+- name: Main - Install pathogen.vim
   get_url:
     url: "https://tpo.pe/pathogen.vim"
     dest: ~/.vim/autoload/pathogen.vim
 
-- name: Install plugins
+- name: Main - Install plugins
   git:
     repo: "{{ item.repo }}"
     dest: "~/.vim/bundle/{{ item.name }}"

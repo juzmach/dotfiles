@@ -1,0 +1,8 @@
+---
+users:
+  - username: juzmach
+    password: $6$SjIA1XfN21$NOJTH8uMu/Qjc.501bVMW.Wef/Z1gAl12TL97xaCStuR8h8N0Jd8s38kMw3Etmvc6EXKo4qP23ia.pO.FbGyg0
+    public_ssh_key: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDNGl4LTuDV0t/cNo6aa3zZgY2xAj+HKwHzStTdJtcM799TM+zByMKLpPO5lOhzKgg1gjFic3mXanUDTd1wFLKLOTlrTVXmQ3skFV6WmExYW9VMMPMYTsSiBBVgrNYsmm2MZwAyeEH0UKxdLToBKwB2Yri12Day53Ko46HOYDZv6CfSVWwDCY9zky9rHSCcYMIyqzFYpf6gOEeOY++zhJiIr1cJckdSLjKVBrdZLbPOswOp0XqD9s5yDTz6n6DRUs/AjaWSGX0ZgjKAkOyL+ifeYPFHj3ZOx+4/EkuqtCP/pC5xgHgU7tn/Wm8AYWXT11M/1wtuHlhazaf0iOUF5vEt juusostr@jzmch-rmbp.local
+    sudo: yes
+    shell: zsh

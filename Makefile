@@ -4,7 +4,7 @@ UNAME := $(shell uname -s)
 ifeq ($(UNAME),Darwin)
 	PLAYBOOK := ./playbooks/osx.yml
 else
-	PLAYBOOK := ./playbooks/linux.yml
+	PLAYBOOK := ./playbooks/ubuntu.yml
 endif
 
 

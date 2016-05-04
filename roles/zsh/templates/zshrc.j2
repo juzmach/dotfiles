@@ -1,7 +1,7 @@
 # {{ ansible_managed }}
 
 # Path to your oh-my-zsh installation.
-export ZSH={{ oh_my_zsh_installation.stat.path }}
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -78,6 +78,7 @@ export EDITOR={{ default_editor }}
 # For a full list of active aliases, run `alias`.
 #
 
+{% if ansible_distribution == "MacOSX" %}
 # GPG-Agent
 if test -f $HOME/.gpg-agent-info && \
     kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
@@ -88,6 +89,7 @@ fi
 
 export GPG_TTY=`tty`
 export GPG_AGENT_INFO
+{% endif %}
 
 # Aliases
 

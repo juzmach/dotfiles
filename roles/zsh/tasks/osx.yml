@@ -1,0 +1,27 @@
+---
+- name: OS X - Ensure zsh is installed
+  homebrew:
+    name: zsh
+    state: present
+
+- name: OS X - Check where zsh is installed
+  shell: which zsh
+  register: zsh_installation
+
+- name: OS X - Remove the old zsh from /etc/shells
+  become: yes
+  lineinfile:
+    dest: /etc/shells
+    line: "/bin/zsh"
+    state: absent
+
+- name: OS X - Ensure homebrew zsh is in /etc/shells
+  become: yes
+  lineinfile:
+    dest: /etc/shells
+    line: "{{ zsh_installation.stdout }}"
+    state: present
+
+- name: OS X - Ensure zsh is the default shell
+  shell: "chsh -s {{ zsh_installation.stdout }}"
+  when: ansible_env.SHELL != zsh_installation.stdout

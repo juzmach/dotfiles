@@ -1,0 +1,31 @@
+---
+- name: Ubuntu - Install zsh package
+  apt:
+    name: zsh
+    state: latest
+  become: yes
+  become_user: root
+
+- name: Ubuntu - Check where zsh is installed
+  shell: which zsh
+  register: zsh_installation
+  changed_when: false
+
+- name: Ubuntu - Get current user
+  shell: whoami
+  register: current_user
+  changed_when: false
+
+- name: Ubuntu - Set zsh as default shell
+  user:
+    name: "{{ current_user.stdout }}"
+    shell: "{{ zsh_installation.stdout }}"
+    state: present
+  become: yes
+  become_user: root
+
+- name: Ubuntu - Set zshrc
+  template:
+    src: zshrc.j2
+    dest: ~/.zshrc
+

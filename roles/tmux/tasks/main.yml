@@ -29,8 +29,3 @@
   homebrew:
     name: homebrew/completions/tmuxinator-completion
     state: present
-
-- name: Ensure EDITOR is set
-  lineinfile:
-    dest: "{{ shell_rc_path }}"
-    line: export EDITOR=vim
